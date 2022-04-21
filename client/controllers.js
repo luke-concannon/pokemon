@@ -1,4 +1,4 @@
-import pokemonData from './data/pokemon.json'
+import pokemonArray from './data/pokemonArray'
 
 export const minifyPokemon = (pokemon) => {
     return {
@@ -17,8 +17,8 @@ export const minifyPokemon = (pokemon) => {
     }
 }
 
-export const PokemonLowerCase = () => {
-    const namesArr = Object.keys(pokemonData)
+export const pokemonLowerCase = () => {
+    const namesArr = pokemonArray.forEach(pokemon => pokemon.name)
     const lowerCase = namesArr.map(name => name.toLowerCase())
     return lowerCase
 }
