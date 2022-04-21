@@ -1,24 +1,33 @@
-import pokemonData from './data/pokemon.json'
+import pokemonArray from './data/pokemonArray'
 
-export const minifyPokemon = (pokemon) => {
+export const minifyPokemon = (pokeType, pokeSpecies) => {
     return {
-        name: pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1),
-        height: pokemon.height,
-        weight: pokemon.weight,
-        experience: pokemon.base_experience,
-        type: pokemon.types[0].type.name,
-        hp: pokemon.stats[0].base_stat,
-        attack: pokemon.stats[1].base_stat,
-        defense: pokemon.stats[2].base_stat,
-        specialAttack: pokemon.stats[3].base_stat,
-        specialDefense: pokemon.stats[4].base_stat,
-        speed: pokemon.stats[5].base_stat,
-        specialAbility: pokemon.abilities[0].ability.name
+        // From Type api
+        id: pokeType.id,
+        name: pokeType.name.charAt(0).toUpperCase() + pokeType.name.slice(1),
+        height: pokeType.height,
+        weight: pokeType.weight,
+        experience: pokeType.base_experience,
+        type: pokeType.types,
+        hp: pokeType.stats[0].base_stat,
+        attack: pokeType.stats[1].base_stat,
+        defense: pokeType.stats[2].base_stat,
+        specialAttack: pokeType.stats[3].base_stat,
+        specialDefense: pokeType.stats[4].base_stat,
+        speed: pokeType.stats[5].base_stat,
+        moves: pokeType.moves,
+        specialAbility: pokeType.abilities[0].ability.name,
+        // From evolution api
+        evolutionURL: pokeSpecies.evolution_chain.url,
+        happiness: pokeSpecies.base_happiness,
+        colour: pokeSpecies.color.name,
+        habitat: pokeSpecies.habitat.name,
+        shape: pokeSpecies.shape.name
     }
 }
 
-export const PokemonLowerCase = () => {
-    const namesArr = Object.keys(pokemonData)
+export const pokemonLowerCase = () => {
+    const namesArr = pokemonArray.forEach(pokemon => pokemon.name)
     const lowerCase = namesArr.map(name => name.toLowerCase())
     return lowerCase
 }
