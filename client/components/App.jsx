@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getEvolutionById, getPokemonByName } from '../api/apiClient'
+import { getEvolutionById, getPokemonByName } from '../api/pokemon'
 import pokeArray from '../data/pokemonArray'
 import PokeCard from './PokemonCard'
 import Select from 'react-select'
