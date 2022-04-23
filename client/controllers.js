@@ -8,7 +8,7 @@ export const minifyPokemon = (pokeType, pokeSpecies) => {
         height: pokeType.height,
         weight: pokeType.weight,
         experience: pokeType.base_experience,
-        type: pokeType.types,
+        type: pokeType.types.map(type => type.type.name),
         hp: pokeType.stats[0].base_stat,
         attack: pokeType.stats[1].base_stat,
         defense: pokeType.stats[2].base_stat,
