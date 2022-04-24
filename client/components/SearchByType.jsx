@@ -1,48 +1,65 @@
-// import React, { useState, useEffect } from 'react'
-// import { getPokemonByName } from '../api/pokemon'
-// import pokeArray from '../data/pokemonArray'
-// import PokeCard from './PokemonCard'
+// import React, { useState } from 'react'
+// import { useDispatch } from 'react-redux'
 // import Select from 'react-select'
-// import Header from './Header'
 
-// const App = () => {
-//   const [pokemon, setPokemon] = useState({})
-//   const [pokeDropdown, setPokeDropdown] = useState({})
+// const TypeDropdown = ({ children }) => {
+//   const [type, setType] = useState('')
+//   const dispatch = useDispatch()
 
-//   const pokeSelect = pokeArray.map(pokemon => {
-//     return {
-//       value: pokemon.name,
-//       label: pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1),
-//   }}
-//   )
-  
-
-//   const loadPokemon = async (name) => {
-//       const pokeFromApi = await getPokemonByName(name)
-//       const index = pokeArray.findIndex(poke => poke.name === name)
-//       const pokeFromArr = pokeArray[index]
-//       setPokemon({ ...pokeFromApi, ...pokeFromArr  })
+//   const dispatchPokemon = (pokeType) => {
+//     dispatch(fetchPokemon(pokeType))
 //   }
 
-//   useEffect(() => {
-//      loadPokemon()
-//   }, [])
 
 //   return (
-//     <div className='app-container'>
-//       <div className ='header-container'>
-//       <Header />
+//     <div>
 //       <Select
-//       placeholder='Select a Pokemon'
+//       isClearable={true}
+//       placeholder='By Name'
 //       options={pokeSelect}
-//       onChange={(opt) => loadPokemon(opt.value)}
-//       />
-//       </div>
-//       {pokemon !== {} && <PokeCard {...pokemon} />}
+//       onChange={(e) => dispatchPokemon((e.value))} />
 //     </div>
 //   )
 //   }
 
+// export default TypeDropdown
+  import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import Select from 'react-select'
+import pokeArray from '../data/pokemonArray'
+import { fetchPokemonByName } from '../actions'
 
-// export default App
+const NameDropdown = () => {
+  const dispatch = useDispatch()
+
+    const pokeSelect = pokeArray.map(pokemon => {
+    return {
+      value: pokemon.name,
+      label: pokemon.name,
+  }}
+  )
+
+  const dispatchPokemon = (name) => {
+    dispatch(fetchPokemonByName(name))
+  }
+
+  const getMultiPokeArray = (arr) => {
+    const multiPokeArray = arr.map(e => e.value)
+    return multiPokeArray
+  }
+
+  return (
+    <div>
+      <Select
+      isClearable={true}
+      isMulti
+      placeholder='Not you Pitta Bread'
+      options={pokeSelect}
+      onChange={e => console.log(getMultiPokeArray(e))} />
+    </div>
+  )
+  }
+
+export default NameDropdown
+
   

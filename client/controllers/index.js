@@ -1,4 +1,10 @@
-import pokemonArray from './data/pokemonArray'
+import pokemonArray from '../data/pokemonArray'
+
+export const getNameImg = (name) => {
+    const index = pokemonArray.findIndex(poke => poke.name === name)
+    const pokeFromArr = pokemonArray[index]
+    return pokeFromArr
+}
 
 export const minifyPokemon = (pokeType, pokeSpecies) => {
     return {

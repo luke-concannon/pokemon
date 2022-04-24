@@ -1,44 +1,40 @@
-// import React, { useState, useEffect } from 'react'
-// import { getPokemonByName } from '../api/pokemon'
-// import pokeArray from '../data/pokemonArray'
-// import PokeCard from './PokemonCard'
-// import Select from 'react-select'
-// import Header from './Header'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import Select from 'react-select'
+import pokeArray from '../data/pokemonArray'
+import { fetchPokemonByName } from '../actions'
 
-// const App = () => {
-//   const [pokemon, setPokemon] = useState({})
-//   const [pokeDropdown, setPokeDropdown] = useState({})
+const NameDropdown = () => {
+  const dispatch = useDispatch()
 
-//   const pokeSelect = pokeArray.map(pokemon => {
-//     return {
-//       value: pokemon.name,
-//       label: pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1),
-//   }}
-//   )
-  
+    const pokeSelect = pokeArray.map(pokemon => {
+    return {
+      value: pokemon.name,
+      label: pokemon.name,
+  }}
+  )
 
-//   const loadPokemon = async (name) => {
-//       const pokeFromApi = await getPokemonByName(name)
-//       const index = pokeArray.findIndex(poke => poke.name === name)
-//       const pokeFromArr = pokeArray[index]
-//       setPokemon({ ...pokeFromApi, ...pokeFromArr  })
-//   }
+  const dispatchPokemon = (name) => {
+    dispatch(fetchPokemonByName(name))
+  }
 
-//   useEffect(() => {
-//      loadPokemon()
-//   }, [])
+  const getMultiPokeArray = (arr) => {
+    const multiPokeArray = arr.map(e => e.value)
+    return multiPokeArray
+  }
 
-//   return (
-//     <div>
-//       <Select
-//       placeholder='Select a Pokemon'
-//       options={pokeSelect}
-//       onChange={(opt) => loadPokemon(opt.value)}
-//       />
-//     </div>
-//   )
-//   }
+  return (
+    <div>
+      <Select
+      isClearable={true}
+      isMulti
+      placeholder='By Name'
+      options={pokeSelect}
+      onChange={e => dispatchPokemon(getMultiPokeArray(e))} />
+    </div>
+  )
+  }
 
+export default NameDropdown
 
-// export default App
   
