@@ -1,16 +1,16 @@
 const path = require('path')
 const express = require('express')
 
+const userRoutes = require('./routes/users')
 const server = express()
 
 server.use(express.json())
-server.use(express.static(path.join(__dirname, './public')))
+server.use(express.static(path.join(__dirname, 'public')))
 
-server.get('/greeting', (req, res) => {
-  const greetings = ['hola', 'hi', 'hello', 'howdy']
-  let index = Math.floor(Math.random() * greetings.length)
-  console.log(index)
-  res.json({ greeting: greetings[index] })
+server.use('/api/v1/users', userRoutes)
+
+server.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
 module.exports = server

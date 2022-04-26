@@ -71,7 +71,7 @@ p {
     display: -ms-flexbox;
     margin: 0 auto;
     flex-direction: column;
-    width: 100%;
+    width: 80vw;
 }
 
 .header {

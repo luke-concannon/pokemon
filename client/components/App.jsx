@@ -1,31 +1,27 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 
-import pokeArray from '../data/pokemonArray'
-import ErrorMessage from './ErrorMessage'
+import Register from './Register'
+import { cacheUser } from '../auth0-utils'
+import Home from './Home'
 import Header from './Header'
-import PokemonCard from './PokemonCard'
-import PokemonList from './PokemonList'
-import NameDropdown from './SearchByName'
-import TypeDropdown from './SearchByType'
+
 
 const App = () => {
-  const pokemon = useSelector(state => state.pokemon)
-  const searchVisible = useSelector(state => state.searchVis)
-
+  cacheUser(useAuth0)
   return (
-    <div className='app-container'>
-      <Header />
-      {searchVisible === true && 
-          <div className='dropdowns'>
-            <NameDropdown />
-            <TypeDropdown />
-          </div>}
-      <PokemonList />
-      <ErrorMessage />
-    </div>
+    <>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="register" element={<Register />} />
+        </Routes>
+      </Router>
+    </>
   )
-  }
+}
 
 export default App
   
