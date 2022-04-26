@@ -6,18 +6,23 @@ import ErrorMessage from './ErrorMessage'
 import Header from './Header'
 import PokemonCard from './PokemonCard'
 import PokemonList from './PokemonList'
-import SearchByName from './SearchByName'
-import SearchBytype from './SearchByType'
+import NameDropdown from './SearchByName'
+import TypeDropdown from './SearchByType'
 
 const App = () => {
   const pokemon = useSelector(state => state.pokemon)
-
+  const searchVisible = useSelector(state => state.searchVis)
 
   return (
     <div className='app-container'>
       <Header />
-        <PokemonList />
-        <ErrorMessage />
+      {searchVisible === true && 
+          <div className='dropdowns'>
+            <NameDropdown />
+            <TypeDropdown />
+          </div>}
+      <PokemonList />
+      <ErrorMessage />
     </div>
   )
   }

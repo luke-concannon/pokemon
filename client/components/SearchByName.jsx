@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch } from 'react-redux'
 import Select from 'react-select'
+import makeAnimated from 'react-select/animated';
+
 import pokeArray from '../data/pokemonArray'
 import { fetchPokemonByName } from '../actions'
 
 const NameDropdown = () => {
   const dispatch = useDispatch()
 
-    const pokeSelect = pokeArray.map(pokemon => {
+  const animatedComponents = makeAnimated()
+
+    const selectOne = pokeArray.map(pokemon => {
     return {
       value: pokemon.name,
       label: pokemon.name,
@@ -26,10 +30,10 @@ const NameDropdown = () => {
   return (
     <div>
       <Select
-      isClearable={true}
       isMulti
+      components={animatedComponents}
       placeholder='By Name'
-      options={pokeSelect}
+      options={selectOne}
       onChange={e => dispatchPokemon(getMultiPokeArray(e))} />
     </div>
   )

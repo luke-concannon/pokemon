@@ -28,11 +28,6 @@ const Header = () => {
            <nav className='main-nav'>
               <button className='button-56' onClick={searchClick}>{searchVisible === false ? 'Search' : 'Exit Search'}</button>
            </nav>
-           {searchVisible === true && 
-             <div className='dropdowns'>
-               <NameDropdown />
-               <TypeDropdown />
-             </div>}
            </div>
          </div>
        </header>
