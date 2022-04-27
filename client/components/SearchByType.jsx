@@ -23,7 +23,7 @@
 //   }
 
 // export default TypeDropdown
-  import React, { useState } from 'react'
+  import React from 'react'
 import { useDispatch } from 'react-redux'
 import Select from 'react-select'
 import pokeArray from '../data/pokemonArray'

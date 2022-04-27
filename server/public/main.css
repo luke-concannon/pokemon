@@ -21,13 +21,25 @@ h3 {
 
 p {
     font-family: monospace;
+    font-size: 1rem;
+    font-weight: 100;;
 }
 
 .app-container {
-    width: 80vw;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
+    position: relative;
+    min-height: 100vh;
+
+}
+
+.footer-container {
+    position: absolute;
+    border-radius: 10px;
+    width: 100vw;
+    /* height: 2.5rem; */
+    background-color: burlywood;
+    margin-top: 2.5rem;
+    padding: 20px
+    /* align-items: center; */
 }
 
 .pokemon-card {
@@ -62,7 +74,7 @@ p {
 }
 
 .css-b62m3t-container {
-    width: 40vw;
+    width: 80vw;
 }
 
 .header-container {
@@ -121,6 +133,36 @@ p {
     font-weight: 100;
 }
 
+.logged-out-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 100px 20px 20px 20px;
+}
+
+.logged-out-details {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 10px 10px 30px;
+    padding:10px;
+    /* text-align: center; */
+    width: 35vw;
+}
+
+.logged-out-details button {
+    background-color: white;
+    border: 0px;
+    text-align: right;
+    font-family: Heading-reg;
+    font-size: 1.2rem;
+}
+
+.logged-out-image {
+    width: 35vw
+}
+
 #app {
     display: flex;
     align-items: center;
@@ -137,8 +179,8 @@ p {
     color: #111;
     cursor: pointer;
     display: flex;
-    font-family: monospace;    font-size: 16px;
-    height: 48px;
+    font-family: monospace;    font-size: .9rem;  font-weight: 400;
+    height: 35px;
     justify-content: center;
     line-height: 24px;
     max-width: 100%;
@@ -157,7 +199,7 @@ p {
     border-radius: 8px;
     content: "";
     display: block;
-    height: 48px;
+    height: 35px;
     left: 0;
     width: 100%;
     position: absolute;
@@ -178,10 +220,4 @@ p {
 
 .button-56:hover {
     outline: 0;
-}
-
-@media (min-width: 768px) {
-    .button-56 {
-        padding: 0 40px;
-    }
 }

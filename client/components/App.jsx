@@ -7,11 +7,11 @@ import { cacheUser } from '../auth0-utils'
 import Home from './Home'
 import Header from './Header'
 
-
 const App = () => {
   cacheUser(useAuth0)
+
   return (
-    <>
+    <div className='app-container'>
       <Router>
         <Header />
         <Routes>
@@ -19,9 +19,8 @@ const App = () => {
           <Route path="register" element={<Register />} />
         </Routes>
       </Router>
-    </>
+    </div>
   )
 }
 
 export default App
-  

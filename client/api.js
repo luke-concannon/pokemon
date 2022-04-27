@@ -17,3 +17,10 @@ function logError(err) {
     throw err
   }
 }
+
+export const getPokemon = async (id) => {
+  return request
+  .post(`${rootUrl}/pokemon`)
+  .send(id)
+  .catch(logError)
+}

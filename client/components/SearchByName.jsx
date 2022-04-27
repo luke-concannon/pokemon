@@ -1,15 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import Select from 'react-select'
-import makeAnimated from 'react-select/animated';
 
 import pokeArray from '../data/pokemonArray'
 import { fetchPokemonByName } from '../actions'
 
 const NameDropdown = () => {
   const dispatch = useDispatch()
-
-  const animatedComponents = makeAnimated()
 
     const selectOne = pokeArray.map(pokemon => {
     return {
@@ -31,7 +28,6 @@ const NameDropdown = () => {
     <div>
       <Select
       isMulti
-      components={animatedComponents}
       placeholder='By Name'
       options={selectOne}
       onChange={e => dispatchPokemon(getMultiPokeArray(e))} />
