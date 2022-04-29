@@ -28,6 +28,7 @@ p {
 .app-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     min-height: 100vh;
 
@@ -146,10 +147,10 @@ p {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    /* margin: 10px 10px 10px 30px;
-    padding:10px; */
-    /* text-align: center; */
-    /* width: 35vw; */
+    margin: 10px 10px 10px 30px;
+    padding:10px;
+    text-align: center;
+    width: 35vw;
 }
 
 .logged-out-details button {
@@ -160,14 +161,9 @@ p {
     font-size: 1.2rem;
 }
 
-.logged-out-image {
-    width: 35vw;
-    display:flex;
-    justify-content: center;
-}
-
-.logged-out-image {
-    max-width: 200px;
+.logged-out-image img {
+    max-width: 500px;
+    display:flex
 }
 
 #app {
