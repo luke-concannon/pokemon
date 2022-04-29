@@ -14,7 +14,6 @@ const Home = () => {
          <IfNotAuthenticated>
           <HomeLoggedOut />
         </IfNotAuthenticated>
-        <Footer />
     </div>
   )
   }

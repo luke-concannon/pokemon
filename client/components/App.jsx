@@ -6,6 +6,7 @@ import Register from './Register'
 import { cacheUser } from '../auth0-utils'
 import Home from './Home'
 import Header from './Header'
+import Footer from './Footer'
 
 const App = () => {
   cacheUser(useAuth0)
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="register" element={<Register />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   )
