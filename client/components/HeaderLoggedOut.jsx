@@ -5,20 +5,14 @@ const Header = () => {
 
   const { loginWithRedirect } = useAuth0()
 
-//   function handleRegister(e) {
-//     e.preventDefault()
-//     loginWithRedirect({ redirectUri:`${window.location.origin}/register` })
-//    }
-
   function handleSignIn(e) {
     e.preventDefault()
-    loginWithRedirect()  
+    loginWithRedirect()
   }
 
   return (
-    <div className='main-nav'>
-        <nav>
-            {/* <button onClick={handleRegister}>Register</button> */}
+    <div>
+        <nav className='main-nav'>
             <button className='button-56' onClick={handleSignIn}>Login</button>
         </nav>
     </div>

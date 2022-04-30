@@ -1,5 +1,5 @@
-exports.seed = (knex) => {
-  const empty = (table) => () => knex(table).del()
-  return empty('users')()
-    .then(empty('pokemon'))
+exports.seed = async (knex) => {
+  const empty = (table) => knex(table).del()
+  await empty('users')
+  await empty('pokemon')
 }

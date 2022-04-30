@@ -10,10 +10,9 @@ const Header = () => {
     <div className ='header-container'>
        <header>
         <div className='header'>
-           <img src='../images/pokes.png' className='logo'/>
-           <div className='header-right'>
-           <h1>Classic Pokes</h1>
-           <h3>An Homage to the Original 150</h3>
+           <div className='header-left'>
+           <h1>Rātā and The Pokémon</h1>
+           <h3>In Honor of the Revered Pokémon Trainer, Rātā Marley Rose</h3>
            <IfAuthenticated>
              <HeaderLoggedIn />
            </IfAuthenticated>
@@ -21,6 +20,7 @@ const Header = () => {
              <HeaderLoggedOut />
            </IfNotAuthenticated>
            </div>
+           <img src='../images/pokes.png' className='logo'/>
          </div>
        </header>
        </div>

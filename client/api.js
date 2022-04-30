@@ -3,7 +3,9 @@ import request from 'superagent'
 const rootUrl = '/api/v1'
 
 export const addUser = async (user) => {
-  return request.post(`${rootUrl}/users`).send(user).catch(logError)
+  await request.post(`${rootUrl}/users`)
+  .send(user)
+  .catch(logError)
 }
 
 function logError(err) {
@@ -19,8 +21,9 @@ function logError(err) {
 }
 
 export const getPokemon = async (id) => {
-  return request
+  const res = await request
   .post(`${rootUrl}/pokemon`)
   .send(id)
   .catch(logError)
+  return res
 }

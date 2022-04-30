@@ -3,17 +3,12 @@ import { useSelector } from 'react-redux'
 
 import ErrorMessage from './ErrorMessage'
 import PokemonList from './PokemonList'
-import NameDropdown from './SearchByName'
 
 const HomeLoggedIn = () => {
   const searchVisible = useSelector(state => state.searchVis)
 
   return (
-    <div className='home-container'>
-      {searchVisible === true && 
-          <div className='dropdowns'>
-            <NameDropdown />
-          </div>}
+    <div className='home-container'>          
       <PokemonList />
       <ErrorMessage />
     </div>

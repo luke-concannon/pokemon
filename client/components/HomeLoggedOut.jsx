@@ -6,7 +6,7 @@ const HomeLoggedOut = () => {
 
   const getRandomId = () => {
     const min = Math.ceil(1);
-    const max = Math.floor(151);
+    const max = Math.floor(809);
     const randomId = Math.floor(Math.random() * (max - min) + min)
     return ({
         id: randomId
@@ -15,6 +15,7 @@ const HomeLoggedOut = () => {
 
   const randomPoke = async () => {
     const id = getRandomId()
+    console.log(id)
     try {
       const res = await getPokemon(id)
       const pokemon = res.body
@@ -38,7 +39,7 @@ const HomeLoggedOut = () => {
       <div className='logged-out-details'>
         <h1>{pokemon.name}</h1>
         <p>{pokemon.blurb}</p>
-        <button onClick={randomPoke}>&gt;&gt;&gt; Next Pokemon</button>
+        <button onClick={randomPoke}>&gt;&gt;&gt; Next</button>
       </div>
       </div>
     </div>

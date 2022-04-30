@@ -1,5 +1,5 @@
-exports.up = (knex) => {
-  return knex.schema.createTable('pokemon', (table) => {
+exports.up = async(knex) => {
+  await knex.schema.createTable('pokemon', (table) => {
     table.increments('id').primary()
     table.string('name')
     table.string('image')
@@ -7,6 +7,6 @@ exports.up = (knex) => {
   })
 }
 
-exports.down = (knex) => {
-  return knex.schema.dropTable('pokemon')
+exports.down = async (knex) => {
+  await knex.schema.dropTable('pokemon')
 }

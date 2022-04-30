@@ -3,6 +3,7 @@ import { useDispatch , useSelector } from 'react-redux'
 import { useAuth0 } from '@auth0/auth0-react'
 
 import { clearPokemon, searchVis } from '../actions'
+import NameDropdown from './SearchByName'
 
 const Header = () => {
   // const [dropdownVis, setDropdownVis] = useState(false)
@@ -23,12 +24,16 @@ const Header = () => {
   }
 
   return (
-    <div className='main-nav'>
+    <div>
         <nav className='main-nav'>
+            <button className='button-56' onClick={handleLogoff}>Logout</button>
             <button className='button-56' onClick={searchClick}>{searchVisible === false ? 'Search' : 'Exit Search'}</button>
             <button className='button-56'>PokeDojo</button>
-            <button className='button-56' onClick={handleLogoff}>Logout</button>
         </nav>
+        {searchVisible === true &&
+        <div className='dropdowns'>
+            <NameDropdown />
+          </div>}
     </div>
   )
   }
