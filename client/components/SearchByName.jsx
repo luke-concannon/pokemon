@@ -1,22 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import Select from 'react-select'
 
-import pokeArray from '../data/pokemonArray'
 import { fetchPokemonByName } from '../actions'
+import { getAllPokemon } from '../api'
 
 const NameDropdown = () => {
+  const [allPokemon, setAllPokemon] = useState([])
   const dispatch = useDispatch()
 
-    const selectOne = pokeArray.map(pokemon => {
-    return {
-      value: pokemon.name,
-      label: pokemon.name,
-  }}
-  )
+  const allPokesFromDb = async () => {
+    const allPokes = await getAllPokemon()
+    const options = allPokes.map(poke => {
+      return {
+      value: poke === `Farfetch’d` ? 'Farfetchd' : poke,
+      label: poke === `Farfetch’d` ? 'Farfetchd' : poke,
+    }
+    })
+    setAllPokemon(options)
+  }
 
-  const dispatchPokemon = (name) => {
-    dispatch(fetchPokemonByName(name))
+  const dispatchPokemon = (names) => {
+    dispatch(fetchPokemonByName(names))
   }
 
   const getMultiPokeArray = (arr) => {
@@ -24,12 +29,16 @@ const NameDropdown = () => {
     return multiPokeArray
   }
 
+  useEffect(() => {
+    allPokesFromDb()
+  }, [])
+
   return (
     <div>
       <Select
       isMulti
-      placeholder='By Name'
-      options={selectOne}
+      placeholder='Search Pokemon by Name'
+      options={allPokemon}
       onChange={e => dispatchPokemon(getMultiPokeArray(e))} />
     </div>
   )

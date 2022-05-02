@@ -7,6 +7,15 @@ function getPokemon(id, db = connection) {
   .first()
 }
 
+const getAllPokemon = async (db = connection) => {
+  const allPokemon = await db('pokemon')
+  .select('name')
+
+  return allPokemon.map(poke => poke.name)
+}
+
+
 module.exports = {
   getPokemon,
+  getAllPokemon
 }

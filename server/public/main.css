@@ -1,27 +1,41 @@
 @font-face {
-    font-family: Heading-reg;
+    font-family: SpaceMono;
     src: url(./fonts/SpaceMono-Regular.ttf);
     }
 
+    @font-face {
+        font-family: SpaceMonoBold;
+        src: url(./fonts/SpaceMono-Bold.ttf);
+    }
+
 h1 {
-    font-family: Heading-reg;
+    font-family: SpaceMono;
     font-size: 2.2rem;
 }
 
 h2 {
-    font-family: Heading-reg;
+    font-family: SpaceMono;
     font-size: 1.5rem;
 }
 
 h3 {
-    font-family: monospace;
-    font-size: .9rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
 }
 
 p {
-    font-family: monospace;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
-    font-weight: 100;;
+    font-weight: 100;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header a {
+    color:black
 }
 
 .app-container {
@@ -30,11 +44,6 @@ p {
     align-items: center;
     justify-content: flex-start;
     /* min-height: 100vh; */
-
-}
-
-.home-container {
-    margin-top: 50px;;
 }
 
 .footer-container {
@@ -43,7 +52,7 @@ p {
     margin: 0px;
     bottom: 0;
     width: 100vw;
-    border-top: solid 5px black;
+    border-top: solid 3px black;
     text-align: center;
     height:5vh;
     align-items: center;
@@ -53,24 +62,120 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    border: solid 2px burlywood;
-    max-width: 15vw;
+    padding: 0px 10px;
+    border: solid 1px black;
+    width: 22vw;
     border-radius: 10px;
     margin: 10px;
+}
+
+.pokemon-card:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    transition: transform .1s ease-in;
+}
+
+.pokemon-card {
+    transition: transform .1s ease-out;
+} 
+
+.top-details {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: antiquewhite;
+    border-bottom: solid 1px black;
+    padding: 2px 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.top-details p {
+    font-size: .7rem;
+    padding: 2px;
+}
+
+.top-details h3 {
+    font-size: .8rem;
+    font-family: SpaceMono;    
+    margin: 2px 5px;
+    padding: 5px 8px;
+    border: solid 1px black;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.height-weight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 3px;
+}
+
+.id-habitat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 3px;
+}
+
+.card-title {
+    display:flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    background-color: antiquewhite;
+    width: 100%;
+    padding: 2px 10px;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+.card-title h2 {
+    font-size:1.3rem;
+    font-family: SpaceMono;
+    margin: 0px;
 }
 
 .card-img {
   display:flex;
   justify-content: center;
-  width: 80%;
-  height: 30%;
+  width: 95%;
+  height: 40%;
 }
 
 .card-img img {
     max-width: 100%;
     max-height: 100%;
-    padding: 10px;
+    padding: 20px 5px;
+}
+
+.loading-gif {
+    display:flex;
+    justify-content: center;
+    align-self: center;
+    width: 25%;
+}
+
+.loading-gif img {
+    max-width: 25%;
+    max-height: 25%;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.loading h4 {
+    font-family: SpaceMono;
+    font-size: 1.6rem;
+    font-weight: 100;
 }
 
 .dropdowns {
@@ -78,8 +183,10 @@ p {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-bottom: 5vh;
 }
 
+/* dropdown selection menu */
 .css-b62m3t-container {
     width: 80vw;
 }
@@ -119,6 +226,7 @@ p {
     flex-direction: row;
     justify-content:center;
     flex-wrap: wrap;
+    margin-bottom: 10vh;
 }
 
 .header-left {
@@ -148,6 +256,17 @@ p {
     display: -ms-flexbox;
     flex-direction: row;
     max-width: 80vw;
+    margin-top: 10vh;
+}
+
+.learn-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    max-width: 80vw;
 }
 
 .logged-out-details {
@@ -156,21 +275,26 @@ p {
     justify-content: center;
     margin: 10px 10px 10px 30px;
     padding:10px;
-    text-align: center;
+    text-align: left;
     width: 35vw;
+}
+
+.logged-out-details p {
+    font-size: 1.2rem;
 }
 
 .logged-out-details button {
     background-color: white;
     border: 0px;
     text-align: right;
-    font-family: Heading-reg;
-    font-size: 1.2rem;
+    font-family: SpaceMono;
+    font-size: 1rem;
+    margin-top: 20px;;
 }
 
 .logged-out-image img {
-    max-width: 20vw;
-    max-height: 50vh;
+    max-width: 25vw;
+    max-height: 55vh;
     display:flex
 }
 
@@ -191,13 +315,13 @@ p {
     color: #111;
     cursor: pointer;
     display: flex;
-    font-family: monospace;    font-size: .9rem;  font-weight: 400;
-    height: 35px;
+    font-family: SpaceMono;    font-size: .8rem;  font-weight: 400;
+    height: 30px;
     justify-content: center;
     line-height: 24px;
     max-width: 100%;
-    padding: 0 25px;
-    margin: 0px 10px;
+    padding: 0 20px;
+    margin: 0px 7px;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -211,7 +335,7 @@ p {
     border-radius: 8px;
     content: "";
     display: block;
-    height: 35px;
+    height: 30px;
     left: 0;
     width: 100%;
     position: absolute;

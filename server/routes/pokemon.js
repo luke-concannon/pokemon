@@ -3,14 +3,19 @@ const db = require('../db/pokemon')
 
 const router = express.Router()
 
-// POST /api/v1/pokemon
+// GET /api/v1/pokemon
 router.get('/', async (req, res) => {
-    res.status(200).send()
+  try {
+    const allPokemon = await db.getAllPokemon()
+    res.json(allPokemon)
+  } catch (err) {
+      res.status(500).send(err.message)
+  }
   })
 
+// POST /api/v1/pokemon
 router.post('/', async (req, res) => {
   const id = req.body.id
-  console.log(id)
   try {
     const pokemon = await db.getPokemon(id)
     res.json(pokemon)
