@@ -242,7 +242,7 @@ exports.seed = async (knex) => {
     {id:738,name:"Vikavolt",image:"https://img.pokemondb.net/artwork/large/vikavolt.jpg"},
     {id:739,name:"Crabrawler",image:"https://img.pokemondb.net/artwork/large/crabrawler.jpg"},
     {id:740,name:"Crabominable",image:"https://img.pokemondb.net/artwork/large/crabominable.jpg"},
-    {id:741,name:"Oricorio",image:"https://img.pokemondb.net/artwork/large/oricorio.jpg"},
+    {id:741,name:"Oricorio-Baile",image:"https://img.pokemondb.net/artwork/large/oricorio-baile.jpg"},
     {id:742,name:"Cutiefly",image:"https://img.pokemondb.net/artwork/large/cutiefly.jpg"},
     {id:743,name:"Ribombee",image:"https://img.pokemondb.net/artwork/large/ribombee.jpg"},
     {id:744,name:"Rockruff",image:"https://img.pokemondb.net/artwork/large/rockruff.jpg"},

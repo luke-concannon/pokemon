@@ -46,6 +46,8 @@ export const minifyPokemon = (pokeType, pokeSpecies) => {
         return `https://img.pokemondb.net/artwork/large/nidoran-f.jpg`
     } else if (pokemon === 'Nidoran♂') {
         return `https://img.pokemondb.net/artwork/large/nidoran-m.jpg`
+    } else if (pokemon === 'Oricorio') {
+        return `https://img.pokemondb.net/artwork/large/oricorio-baile.jpg`
     } else {
         return `https://img.pokemondb.net/artwork/large/${pokemon.toLowerCase()}.jpg`
     }
@@ -56,30 +58,12 @@ export const getPokemonAsync = async (selectionArr) => {
   const pokemons = []
 
   for (let i = 0; i < selectionArr.length; i++) {
-
           const pokemonAttributes = await getPokemonApi(selectionArr[i].toLowerCase())
-        //   console.log(pokemonAttributes)
-
- 
           const pokeEvolution = await getSpeciesApi(selectionArr[i].toLowerCase())
-          console.log(pokeEvolution)
-
-
           const pokeFromApi = minifyPokemon(pokemonAttributes, pokeEvolution)
-          console.log(pokeFromApi)
-
-
           const image = getPokeImage(pokemonAttributes.name)
-          console.log(image)
-
-
           const pokemon = {...pokeFromApi, image}
-          console.log(pokemon)
-
-
           pokemons.push(pokemon)
-          console.log(pokemons)
         }
-        console.log(pokemons)
         return pokemons
 }

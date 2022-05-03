@@ -11,7 +11,7 @@ export const getPokemonApi = async (name) => {
 
 export const getSpeciesApi = async (name) => {
   const res = await request
-  .get(`https://pokeapi.co/api/v2/pokemon-species/${name}/`)
+  .get(`https://pokeapi.co/api/v2/pokemon-species/${name === 'oricorio-baile' ? 'oricorio' : name}/`)
   return res.body
 }
 
