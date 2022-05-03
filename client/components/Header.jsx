@@ -36,22 +36,22 @@ const Header = () => {
            <div>
             <nav className='main-nav'>
               <IfAuthenticated>
-                <button className='button-56' onClick={handleLogoff}>-LOGOUT-</button>
+                <button className='button-56' onClick={handleLogoff}>LOGOUT</button>
               </IfAuthenticated>
               <IfNotAuthenticated>
-                <button className='button-56' onClick={handleSignIn}>-LOGIN-</button>
+                <button className='button-56' onClick={handleSignIn}>LOGIN</button>
               </IfNotAuthenticated>
                 <Link to="/learn">
-                  <button className='button-56' onClick={clearPokemonState}>-LEARN-</button>
+                  <button className='button-56' onClick={clearPokemonState}>LEARN</button>
                 </Link>
                 <Link to="/dojo">
-                  <button className='button-56'>-DOJO-</button>
+                  <button className='button-56'>DOJO</button>
                 </Link>
                 <Link to="/battle">
-                  <button className='button-56'>-BATTLE-</button>
+                  <button className='button-56'>BATTLE</button>
                 </Link>
                 <Link to="/trade">
-                  <button className='button-56'>-TRADE-</button>
+                  <button className='button-56'>TRADE</button>
                 </Link>
             </nav>
            </div>

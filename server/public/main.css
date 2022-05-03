@@ -1,20 +1,13 @@
-@font-face {
-    font-family: SpaceMono;
-    src: url(./fonts/SpaceMono-Regular.ttf);
-    }
-
-    @font-face {
-        font-family: SpaceMonoBold;
-        src: url(./fonts/SpaceMono-Bold.ttf);
-    }
 
 h1 {
-    font-family: SpaceMono;
+    font-family: 'Playfair Display',
+    serif;;
     font-size: 2.2rem;
 }
 
 h2 {
-    font-family: SpaceMono;
+    font-family: 'Playfair Display',
+    serif;;
     font-size: 1.5rem;
 }
 
@@ -252,7 +245,9 @@ a {
 }
 
 .loading h4 {
-    font-family: SpaceMono;
+    font-family: 'Playfair Display',
+    serif;
+    ;;
     font-size: 1.6rem;
     font-weight: 100;
 }
