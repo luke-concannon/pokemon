@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import Select from 'react-select'
 
-import { fetchPokemonByName } from '../actions'
-import { getAllPokemon } from '../api'
+import { fetchPokemonByName } from '../../actions'
+import { getAllPokemon } from '../../api'
 
 const NameDropdown = () => {
   const [allPokemon, setAllPokemon] = useState([])

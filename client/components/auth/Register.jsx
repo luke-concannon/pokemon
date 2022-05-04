@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { addUser } from '../api'
+import { addUser } from '../../api'
 
-import { GridForm, ColOne, ColTwo, Button } from './Styled'
+import { GridForm, ColOne, ColTwo, Button } from '../Styled'
 
 function Register() {
   const user = useSelector((state) => state.users)

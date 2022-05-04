@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Types from './Types'
+import Types from '../pokemon/Types'
 
 const PokeCard = (props) => {
 

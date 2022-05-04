@@ -2,10 +2,10 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 
-import ErrorMessage from './ErrorMessage'
-import Loading from './Loading'
-import PokemonList from './PokemonList'
-import NameDropdown from './SearchByName'
+import ErrorMessage from '../utils/ErrorMessage'
+import Loading from '../utils/Loading'
+import PokemonList from '../pokemon/PokemonList'
+import NameDropdown from '../dropdowns/SearchByName'
 
 const Learn = () => {
   const isLoading = useSelector(state => state.loading)

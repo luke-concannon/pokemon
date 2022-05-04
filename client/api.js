@@ -5,7 +5,7 @@ const rootUrl = '/api/v1'
 // EXTERNAL APIs
 export const getPokemonApi = async (name) => {
   const res = await request
-  .get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+  .get(`https://pokeapi.co/api/v2/pokemon/${name === 'shaymin' ? 'shaymin-sky' : name}`)
   return res.body
 }
 

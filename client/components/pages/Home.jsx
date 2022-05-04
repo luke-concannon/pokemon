@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { getPokemonDb, getSpeciesApi } from '../api'
-import Loading from './Loading'
-import { getBlurb } from '../controllers'
-import { requestPokemon, receivePokemon } from '../actions/index'
+import { getPokemonDb, getSpeciesApi } from '../../api'
+import Loading from '../utils/Loading'
+import { getBlurb } from '../../controllers'
+import { requestPokemon, receivePokemon } from '../../actions/index'
 
 const Home = () => {
   const isLoading = useSelector(state => state.loading)

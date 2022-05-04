@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Fire, Normal, Bug, Dark, Flying, Poison, Ghost, Dragon, Psychic, Rock, Grass, Electric, Fairy, Ground, Steel, Water, Ice, Fighting } from './Styled'
+import { Fire, Normal, Bug, Dark, Flying, Poison, Ghost, Dragon, Psychic, Rock, Grass, Electric, Fairy, Ground, Steel, Water, Ice, Fighting } from '../Styled'
 
 const Types = (props) => {
 
