@@ -10,7 +10,6 @@ function getPokemon(id, db = connection) {
 const getAllPokemon = async (db = connection) => {
   const allPokemon = await db('pokemon')
   .select('name')
-
   return allPokemon.map(poke => poke.name)
 }
 

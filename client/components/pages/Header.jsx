@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 import { useAuth0 } from '@auth0/auth0-react'
 import { useDispatch } from 'react-redux'
 
-import { IfAuthenticated, IfNotAuthenticated } from './auth/Authenticated'
-import { clearPokemon } from '../actions'
+import { IfAuthenticated, IfNotAuthenticated } from '../utils/Authenticated'
+import { clearPokemon } from '../../actions/index'
 
 const Header = () => {
   const { logout, loginWithRedirect } = useAuth0()
