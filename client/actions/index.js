@@ -5,6 +5,7 @@ export const REQUEST_POKEMON = 'REQUEST_POKEMON'
 export const RECEIVE_POKEMON = 'RECEIVE_POKEMON'
 export const SHOW_ERROR = 'SHOW_ERROR'
 export const CLEAR_POKEMON = 'CLEAR_POKEMON'
+export const FLIP_CARD = 'FLIP_CARD'
 
 // FUNCS
 export function requestPokemon() {
@@ -34,7 +35,7 @@ export function showError(errorMessage) {
 }
 
 // THUNKS - Pokemon (asnyc redux) 
-export function fetchPokemonByName(selectionArr) {
+export const fetchPokemonByName = (selectionArr) => {
   return async (dispatch) => {
     try {
       dispatch(requestPokemon())
