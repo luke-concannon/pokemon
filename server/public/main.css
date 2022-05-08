@@ -243,6 +243,7 @@ a {
     height:100%;   
     margin: 0px;
     padding: 2px 10px;
+    text-align: center;
 }
 
 .card-details-top h4 {
