@@ -8,5 +8,5 @@ export default combineReducers({
     errorMessage,
     pokemon,
     user,
-    loading
+    loading,
 })
