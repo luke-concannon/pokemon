@@ -262,6 +262,21 @@ a {
     margin: 0px;
 }
 
+.backcard-details-top h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .5rem;
+    padding: 3px;
+    margin: 0px;
+    border-bottom: solid 1px black;
+}
+
+.backcard-details-top h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    font-size: .8rem;
+    margin: 0px;
+}
+
 .card-details-middle h4 {
     font-family: 'Open Sans', sans-serif;
     font-size: .5rem;
@@ -271,6 +286,21 @@ a {
 }
 
 .card-details-middle h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    font-size: .8rem;
+    margin: 0px;
+}
+
+.backcard-details-middle h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .5rem;
+    padding: 3px;
+    margin: 0px;
+    border-bottom: solid 1px black;
+}
+
+.backcard-details-middle h3 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 200;
     font-size: .8rem;
@@ -287,6 +317,19 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.backcard-details-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.backcard-details-middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 
