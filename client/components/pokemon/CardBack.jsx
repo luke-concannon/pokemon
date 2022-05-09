@@ -20,16 +20,20 @@ const CardBack = (props) => {
           <h2>{poke.name}</h2>
           </div>
         <div className='card-details'>
-        <div className='card-details-top'>
+        <div className='backcard-details-top'>
+          {poke.specialAbilities.map(ability => <span key={ability.url} className='test'><h4>Special Ability</h4><h3>{ability.ability}</h3></span>)}
         </div>
-        <div className='card-details-middle'>
+        <div className='backcard-details-middle'>
+          <span className='test'><h4>Shape</h4><h3>{poke.shape}</h3></span>
+          <span className='test'><h4>Colour</h4><h3>{poke.colour}</h3></span>
+          <span className='test'><h4>Habitat</h4><h3>{poke.habitat}</h3></span>
         </div>
           </div> 
           <div className='trainer-details'>
+            <h4>Trainer:</h4><h3>Rātā Marley</h3>
           </div>
       </div>
   )
   }
 
 export default CardBack
-  
