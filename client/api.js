@@ -23,6 +23,18 @@ export const getAllPokemon = async () => {
   return res.body
 }
 
+export const getUsers = async () => {
+  const res = await request
+  .get(`${rootUrl}/users`)
+    return res.body
+}
+
+export const getComments = async () => {
+  const res = await request
+  .get(`${rootUrl}/comments`)
+  return res.body
+}
+
 // POST
 export const getPokemonDb = async (id) => {
   const res = await request
@@ -37,6 +49,13 @@ export const addUser = async (user) => {
   .post(`${rootUrl}/users`)
   .send(user)
   .catch(logError)
+}
+
+export const addComment = async (newComment) => {
+  const latestComment = await request
+    .post('/api/v1/comments')
+    .send(newComment)
+    return latestComment
 }
 
 // ERROR MESSAGE

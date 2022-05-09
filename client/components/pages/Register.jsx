@@ -11,6 +11,7 @@ function Register() {
   const [form, setForm] = useState({
     auth0Id: '',
     email: '',
+    name: ''
   })
 
   useEffect(() => {
@@ -44,6 +45,15 @@ function Register() {
           id="email"
           name="email"
           value={form.email}
+          disabled={true}
+        />
+
+        <ColOne htmlFor="email">Name:</ColOne>
+        <ColTwo
+          type="text"
+          id="name"
+          name="name"
+          value={form.name}
           disabled={true}
         />
 

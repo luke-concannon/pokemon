@@ -7,7 +7,7 @@ const PokemonList = () => {
 
   return (
     <div className ='pokemon-list'>
-        {pokemon.slice(0).reverse().map((poke, index) => (<Card key={index} pokemon={poke} />))}
+        {pokemon.slice(0).reverse().map(poke => (<Card key={poke.id} pokemon={poke} />))}
     </div>
   )
   }

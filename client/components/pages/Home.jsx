@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <div className='home-container'>
-      <div className='logged-out-container'>
+      <div className='logged-out-container' onClick={randomPoke}>
         {isLoading === true
         ? <Loading /> 
         :(
@@ -51,7 +51,8 @@ const Home = () => {
         <div className='logged-out-details'>
           <h1>{pokemon.name}</h1>
           <p>{pokemon.blurb}</p>
-          <button onClick={randomPoke}>&gt;&gt;&gt; Next</button>
+          
+          <button>&gt;&gt;&gt; Next</button>
         </div>
         </>
         )}

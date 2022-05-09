@@ -3,6 +3,12 @@ const db = require('../db/users')
 
 const router = express.Router()
 
+// GET /api/v1/users
+// router.get('/', async (req, res) => {
+  
+
+// })
+
 // POST /api/v1/users
 router.post('/', async (req, res) => {
   const newUser = req.body

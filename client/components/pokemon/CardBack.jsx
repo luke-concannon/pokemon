@@ -13,7 +13,6 @@ const CardBack = (props) => {
         <h4>hp:</h4><h3>{poke.hp}</h3>
         </div>
       </div>
-      
         <div className='card-img'>
           <img src={poke.image} />
         </div>
@@ -22,7 +21,6 @@ const CardBack = (props) => {
           </div>
         <div className='card-details'>
         <div className='card-details-top'>
-
         </div>
         <div className='card-details-middle'>
         </div>
