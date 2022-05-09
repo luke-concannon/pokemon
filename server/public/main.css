@@ -91,6 +91,7 @@ a {
     position: fixed;
     background-color: burlywood;
     margin: 0px;
+    margin-top:10px;
     bottom: 0;
     width: 100vw;
     border-top: solid 3px black;
@@ -394,6 +395,13 @@ a {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.dojo-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 10vh;
 }
 
 #app {
