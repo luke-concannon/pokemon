@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from react-router-dom
 
 import Types from '../pokemon/Types'
 
@@ -19,9 +20,13 @@ const PokeCard = (props) => {
         <div className='card-img'>
           <img src={poke.image} />
         </div>
-        <div className='card-title'>
+        // This needs completing...
+        <Link to='/${poke.name}'>
+          <div className='card-title'>
           <h2>{poke.name}</h2>
           </div>
+
+        </Link>
         <div className='card-details'>
         <div className='card-details-top'>
             <span className='test'><h4>Attack</h4><h3>{poke.attack}</h3></span>
@@ -39,9 +44,13 @@ const PokeCard = (props) => {
           {poke.type.map(type => <Types key={poke.id} type={type}/>)}
           </div>
           </div> 
+          <div className='card-footer'>
           <div className='trainer-details'>
            <h4>Trainer:</h4><h3>Rātā Marley</h3>
-          </div>
+           </div>
+           <button onClick={props.flip}>&gt;&gt; Flip</button>
+           </div>
+          
       </div>
   )
   }

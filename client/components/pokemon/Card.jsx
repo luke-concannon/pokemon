@@ -10,10 +10,10 @@ const Card = (props) => {
     }
 
   return (
-    <div onClick={handleClick}>
+    <div>
         {!isFlipped
-          ? <PokeCard pokemon={props.pokemon} />
-          : <CardBack pokemon={props.pokemon} />
+          ? <PokeCard pokemon={props.pokemon} flip={handleClick}/>
+          : <CardBack pokemon={props.pokemon} flip={handleClick}/>
           }
     </div>
   )

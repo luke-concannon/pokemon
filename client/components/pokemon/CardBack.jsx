@@ -21,17 +21,26 @@ const CardBack = (props) => {
           </div>
         <div className='card-details'>
         <div className='backcard-details-top'>
-          {poke.specialAbilities.map(ability => <span key={ability.url} className='test'><h4>Special Ability</h4><h3>{ability.ability}</h3></span>)}
+          <span className='special-ability'>
+            <h4>Happiness</h4><h3>{poke.happiness}</h3>
+            <h4>Special Abilities</h4>
+            {poke.specialAbilities.map(ability => <h3 key={ability.url}>{ability.ability}</h3>)}
+          </span>
+          <span className='shape-colour-habitat'><h4>Shape</h4><h3>{poke.shape}</h3>
+            <h4>Colour</h4><h3>{poke.colour}</h3>
+            <h4>Habitat</h4><h3>{poke.habitat}</h3>
+          </span>
         </div>
         <div className='backcard-details-middle'>
-          <span className='test'><h4>Shape</h4><h3>{poke.shape}</h3></span>
-          <span className='test'><h4>Colour</h4><h3>{poke.colour}</h3></span>
-          <span className='test'><h4>Habitat</h4><h3>{poke.habitat}</h3></span>
+         
         </div>
           </div> 
+          <div className='card-footer'>
           <div className='trainer-details'>
-            <h4>Trainer:</h4><h3>Rātā Marley</h3>
-          </div>
+           <h4>Trainer:</h4><h3>Rātā Marley</h3>
+           </div>
+           <button onClick={props.flip}>&gt;&gt; Flip</button>
+           </div>
       </div>
   )
   }
