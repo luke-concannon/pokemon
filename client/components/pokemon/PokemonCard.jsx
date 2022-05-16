@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom'
 import Types from '../pokemon/Types'
 
 const PokeCard = (props) => {
-
   const poke = props.pokemon
 
   return (
-    <div className='pokemon-card'>
+    <div style={{border:props.colour}} className="pokemon-card">
       <div className='top-details'>
         {poke.evolvesFrom?.name ? <h3>EVOLUTION</h3> : <h3>BASIC</h3>}
         <div className='image-section-text'>
@@ -16,16 +15,12 @@ const PokeCard = (props) => {
         <h4>hp:</h4><h3>{poke.hp}</h3>
         </div>
       </div>
-      
         <div className='card-img'>
-          <img src={poke.image} />
+          <Link to={`/${poke.name.toLowerCase()}`}><img src={poke.image} /></Link>
         </div>
-        {/* <Link to='/${poke.name}'> */}
           <div className='card-title'>
-          <h2>{poke.name}</h2>
+          <h2><Link to={`/${poke.name.toLowerCase()}`}>{poke.name}</Link></h2>
           </div>
-
-        {/* </Link> */}
         <div className='card-details'>
         <div className='card-details-top'>
             <span className='test'><h4>Attack</h4><h3>{poke.attack}</h3></span>
@@ -40,14 +35,14 @@ const PokeCard = (props) => {
             <span className='test'><h4>Experience</h4><h3>{poke.experience}yrs</h3></span>
         </div>
         <div className='types'>
-          {poke.type.map(type => <Types key={poke.id} type={type}/>)}
+          {poke.type.map(type => <Types key={type} type={type}/>)}
           </div>
           </div> 
           <div className='card-footer'>
           <div className='trainer-details'>
            <h4>Trainer:</h4><h3>Rātā Marley</h3>
            </div>
-           <button onClick={props.flip}>&gt;&gt; Flip</button>
+           <button onClick={props.flip} style={{cursor:"pointer"}}>&gt;&gt; Flip</button>
            </div>
           
       </div>

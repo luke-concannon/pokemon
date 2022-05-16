@@ -11,25 +11,27 @@ import Learn from './pages/Learn'
 import Dojo from './pages/Dojo'
 import Battle from './pages/Battle'
 import Trade from './pages/Trade'
+import Detail from './pokemon/Detail'
 
 const App = () => {
   cacheUser(useAuth0)
 
   return (
-    <div className='app-container'>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="register" element={<Register />} />
-          <Route path="learn" element={<Learn />} />
-          <Route path="dojo" element={<Dojo />} />
-          <Route path="battle" element={<Battle />} />
-          <Route path="trade" element={<Trade />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </div>
+    <Router>
+      <div className='app-container'>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/learn" element={<Learn />} />
+            <Route path="/dojo" element={<Dojo />} />
+            <Route path="/battle" element={<Battle />} />
+            <Route path="/trade" element={<Trade />} />
+            <Route path="/:id" element={<Detail />} />
+          </Routes>
+          <Footer />
+      </div>
+    </Router>
   )
 }
 

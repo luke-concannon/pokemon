@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <div className='home-container'>
-      <div className='logged-out-container' onClick={randomPoke}>
+      <div className='logged-out-container' onClick={randomPoke} style={{cursor:"pointer"}}>
         {isLoading === true
         ? <Loading /> 
         :(
