@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from react-router-dom
+import { Link } from 'react-router-dom'
 
 import Types from '../pokemon/Types'
 
@@ -20,13 +20,12 @@ const PokeCard = (props) => {
         <div className='card-img'>
           <img src={poke.image} />
         </div>
-        // This needs completing...
-        <Link to='/${poke.name}'>
+        {/* <Link to='/${poke.name}'> */}
           <div className='card-title'>
           <h2>{poke.name}</h2>
           </div>
 
-        </Link>
+        {/* </Link> */}
         <div className='card-details'>
         <div className='card-details-top'>
             <span className='test'><h4>Attack</h4><h3>{poke.attack}</h3></span>
