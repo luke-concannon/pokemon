@@ -42,7 +42,7 @@ const Header = () => {
                 <button className='button-56' onClick={handleSignIn}>LOGIN</button>
               </IfNotAuthenticated>
                 <Link to="/learn">
-                  <button className='button-56' onClick={clearPokemonState}>LEARN</button>
+                  <button className='button-56' onClick={clearPokemonState}>SEARCH</button>
                 </Link>
                 <Link to="/dojo">
                   <button className='button-56'>DOJO</button>
