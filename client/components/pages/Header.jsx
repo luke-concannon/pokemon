@@ -25,15 +25,13 @@ const Header = () => {
   }
 
   return (
-    <div className ='header-container'>
-       <header>
-        <div className='header'>
-           <div className='header-left'>
+       <header className ='header-container'>
+        <div className='header-title'>
            <Link to="/">
              <h1>Rātā and The Pokémon</h1>
           </Link>
            <h3>In Honor of the Great Pokémon Trainer, Rātā Marley Rose</h3>
-           <div>
+        </div>
             <nav className='main-nav'>
               <IfAuthenticated>
                 <button className='button-56' onClick={handleLogoff}>LOGOUT</button>
@@ -54,12 +52,8 @@ const Header = () => {
                   <button className='button-56'>TRADE</button>
                 </Link>
             </nav>
-           </div>
-           </div>
-           <img src='../images/pokes.png' className='logo'/>
-         </div>
+           {/* <img src='../images/pokes.png' className='logo'/> */}
        </header>
-       </div>
   )
   }
 

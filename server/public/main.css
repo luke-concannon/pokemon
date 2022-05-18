@@ -2,7 +2,7 @@
 h1 {
     font-family: 'Playfair Display',
     serif;;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
 }
 
 h2 {
@@ -32,28 +32,29 @@ a {
     display: flex;
     display: -webkit-flex;
     display: -ms-flexbox;
-    margin: 0 auto;
-    flex-direction: column;
-    width: 80vw;
-}
-
-.header {
-    justify-content: space-between;
-    display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    width: 80vw;
+    padding-top: 10px;
 }
 
-.logo {
+.header-title {
+    margin-right: auto;
+    padding-right:5px;
+    
+}
+
+/* .logo {
     display: flex;
     align-items: center;
     height: 150px;
     width: auto;
-}
+} */
 
 .main-nav {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     margin: 10px 0px;
 }
@@ -62,23 +63,17 @@ a {
     color:black
 }
 
-.header-left {
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
+.header-title h1 {
+    font-size: 1.8rem;;
+    text-align: left;
+    margin:0;
 }
 
-.header-left h1 {
+.header-title h3 {
     text-align: left;
-    margin: 5px 5px 0px 5px;
-    padding: 5px 5px 0px 5px;
-}
-
-.header-left h3 {
-    text-align: left;
-    margin: 0px 5px 5px 5px;
-    padding: 0px 5px 5px 5px;
+    padding-top: 5px;
     font-weight: 100;
+    margin:0;
 }
 
 .app-container {
@@ -357,17 +352,11 @@ a {
 
 
 /* LOADING SYMBOL */
-.loading-gif {
-    display:flex;
-    justify-content: center;
-    align-self: center;
-    width: 25%;
-}
 
-.loading-gif img {
-    max-width: 25%;
-    max-height: 25%;
-}
+.loading img {
+    max-width: 100px;
+    align-self: center;
+} 
 
 .loading {
     display: flex;
@@ -377,9 +366,7 @@ a {
 }
 
 .loading h4 {
-    font-family: 'Playfair Display',
-    serif;
-    ;;
+    font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
     font-weight: 100;
 }
@@ -425,6 +412,7 @@ a {
     display: -ms-flexbox;
     flex-direction: column;
     max-width: 80vw;
+    width: 100%
 }
 
 .learn-nav {
@@ -445,16 +433,24 @@ a {
 .search-by {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     padding: 5px;
 }
 
-.search-by h4 {
+.search-by button {
     font-size: 1rem;
-    padding: 10px;
+    background-color: white;
+    border:none;
+    padding: 0 0 10px 10px;
     margin: 0px;
     font-family: 'Playfair Display', serif;
 }
 
+.search-by button:hover {
+    transform: translateY(-3px);
+    transition: transform .2s ease-out;
+    color:orange
+}
 
 .logged-out-details {
     margin: 10px 10px 10px 30px;
@@ -563,10 +559,11 @@ a {
 }
 
 .button-56:active {
-    background-color: #2c6572;
+    background-color: #1a3e47;
     outline: 0;
 }
 
 .button-56:hover {
+    background-color: #1a3e47;
     outline: 0;
 }
