@@ -1,4 +1,4 @@
-import { SHOW_ERROR, REQUEST_POKEMON, RECEIVE_POKEMON } from '../actions'
+import { SHOW_ERROR, REQUEST_POKEMON, RECEIVE_POKEMON, RECEIVE_ONE_POKEMON } from '../actions'
 
 function loading(state = false, action) {
   switch (action.type) {
@@ -6,6 +6,9 @@ function loading(state = false, action) {
       return true
 
     case RECEIVE_POKEMON:
+      return false
+
+    case RECEIVE_ONE_POKEMON:
       return false
 
     case SHOW_ERROR:

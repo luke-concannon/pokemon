@@ -30,7 +30,7 @@ const Home = () => {
       const pokemon = {...fromDb, blurb}
       dispatch(receivePokemon(pokemon))
     } catch (err) {
-      console.error('NOT working')
+      console.error(err)
     }
   }
 
@@ -39,7 +39,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className='home-container'>
+    <div>
       <div className='logged-out-container' onClick={randomPoke} style={{cursor:"pointer"}}>
         {isLoading === true
         ? <Loading /> 

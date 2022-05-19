@@ -67,3 +67,13 @@ export const getPokemonAsync = async (selectionArr) => {
         }
         return pokemons
 }
+
+export const getOnePokemonAsync = async (PokeName) => {
+          const pokemonAttributes = await getPokemonApi(PokeName.toLowerCase())
+          const pokeEvolution = await getSpeciesApi(PokeName.toLowerCase())
+          const pokeFromApi = minifyPokemon(pokemonAttributes, pokeEvolution)
+          const image = getPokeImage(pokemonAttributes.name)
+          const pokemon = {...pokeFromApi, image}
+          return pokemon
+
+}

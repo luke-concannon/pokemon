@@ -26,23 +26,20 @@ const Header = () => {
 
   return (
        <header className ='header-container'>
-        <div className='header-title'>
-           <Link to="/">
-             <h1>Rātā and The Pokémon</h1>
-          </Link>
-           <h3>In Honor of the Great Pokémon Trainer, Rātā Marley Rose</h3>
-        </div>
+        <Link to="/">
+          <div className="header-logo">
+             <img src="https://img.pokemondb.net/artwork/large/ivysaur.jpg"/>
+             <div className='header-title'>
+             <h1>PokéPaedia</h1>
+             <h3>An Encyclopaedia of Pokémon, for my daughter Rātā</h3>
+             </div>
+          </div>
+        </Link>
             <nav className='main-nav'>
-              <IfAuthenticated>
-                <button className='button-56' onClick={handleLogoff}>LOGOUT</button>
-              </IfAuthenticated>
-              <IfNotAuthenticated>
-                <button className='button-56' onClick={handleSignIn}>LOGIN</button>
-              </IfNotAuthenticated>
                 <Link to="/learn">
                   <button className='button-56' onClick={clearPokemonState}>SEARCH</button>
                 </Link>
-                <Link to="/dojo">
+                {/* <Link to="/dojo">
                   <button className='button-56'>DOJO</button>
                 </Link>
                 <Link to="/battle">
@@ -50,9 +47,14 @@ const Header = () => {
                 </Link>
                 <Link to="/trade">
                   <button className='button-56'>TRADE</button>
-                </Link>
+                </Link> */}
+                <IfAuthenticated>
+                <button className='button-56 login-logout' onClick={handleLogoff}>LOGOUT</button>
+              </IfAuthenticated>
+              <IfNotAuthenticated>
+                <button className='button-56 login-logout' onClick={handleSignIn}>LOGIN</button>
+              </IfNotAuthenticated>
             </nav>
-           {/* <img src='../images/pokes.png' className='logo'/> */}
        </header>
   )
   }
